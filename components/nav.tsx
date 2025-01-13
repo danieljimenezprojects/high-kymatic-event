@@ -39,7 +39,7 @@ export function Nav() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
+              src="/logo-kymatic.webp"
               alt="High Kymatic Logo"
               width={40}
               height={40}
