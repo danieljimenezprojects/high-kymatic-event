@@ -36,7 +36,7 @@ export function LineUp() {
       affiliations: ["@_conjah", "Ayz Fam"]
     },
     { 
-      name: "Jon \"Gifted\"", 
+      name: "Jon Gifted", 
       role: "JUDGE",
       image: "/jongifted.webp",
       description: "Versatile street dancer specializing in Tutting, Waving, Krump, and Hip Hop.",
