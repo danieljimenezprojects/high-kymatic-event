@@ -94,10 +94,6 @@ export function About() {
                 objectFit="cover"
                 className="rounded-lg"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white bg-black/50">
-                <p className="text-lg font-semibold">Alexandra Filippidou & Kalliopi Tarasidou</p>
-                <p className="text-sm text-[#c3f6fe]">Founders of High Kymatic</p>
-              </div>
             </div>
           </div>
           <div className="mt-8 flex justify-center space-x-8">
