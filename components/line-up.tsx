@@ -162,16 +162,6 @@ export function LineUp() {
                 </button>
                 <div className="p-6 sm:p-8">
                   <div className="flex flex-col sm:flex-row items-start gap-6 sm:items-center">
-                    <div className="relative w-full h-64 sm:w-40 sm:h-40 flex-shrink-0 mb-4 sm:mb-0">
-                      <Image
-                        src={selectedPerformer.image}
-                        alt={selectedPerformer.name}
-                        layout="fill"
-                        objectFit="cover"
-                        objectPosition="top center"
-                        className="rounded-lg"
-                      />
-                    </div>
                     <div className="flex-grow">
                       <h3 className="text-2xl font-bold text-white">{selectedPerformer.name}</h3>
                       <p className="text-[#c3f6fe]">{selectedPerformer.role}</p>
