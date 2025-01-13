@@ -2,7 +2,10 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Metadata } from 'next'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'High-kymatic Event 2025 | The World\'s Largest Waving Experience',
@@ -55,8 +58,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`scroll-smooth ${inter.className}`}>
+      <body>{children}</body>
     </html>
   )
 }
