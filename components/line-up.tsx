@@ -16,7 +16,7 @@ type Performer = {
 }
 
 export function LineUp() {
-  const [selectedJudge, setSelectedJudge] = useState<Performer | null>(null)
+  const [selectedPerformer, setSelectedPerformer] = useState<Performer | null>(null)
 
   const judges: Performer[] = [
     { 
@@ -84,7 +84,7 @@ export function LineUp() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="relative group"
+            className="relative group h-full"
           >
             <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-gradient-to-b from-[#1a1a2e] to-[#2a1a28]">
               <Image
@@ -94,8 +94,7 @@ export function LineUp() {
                 objectFit="cover"
                 className="transition-transform duration-300 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-white">{item.name}</h3>
                   <p className="text-[#c3f6fe] text-sm">{item.role}</p>
@@ -105,7 +104,7 @@ export function LineUp() {
                   <p className="text-sm text-white/80 line-clamp-2">{item.description}</p>
                   {item.longDescription && (
                     <button
-                      onClick={() => setSelectedJudge(item)}
+                      onClick={() => setSelectedPerformer(item)}
                       className="text-[#c3f6fe] text-sm hover:text-white transition-colors mt-2"
                     >
                       Read More
@@ -140,56 +139,60 @@ export function LineUp() {
         </div>
 
         <AnimatePresence>
-          {selectedJudge && (
+          {selectedPerformer && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-              onClick={() => setSelectedJudge(null)}
+              onClick={() => setSelectedPerformer(null)}
             >
               <motion.div
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-[#1a1a2e] rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto relative"
+                className="bg-[#1a1a2e] rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
               >
                 <button
-                  onClick={() => setSelectedJudge(null)}
-                  className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
+                  onClick={() => setSelectedPerformer(null)}
+                  className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors z-10"
                 >
                   <X className="h-6 w-6" />
                 </button>
                 <div className="p-6 sm:p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="relative w-32 h-32 flex-shrink-0">
+                  <div className="flex flex-col sm:flex-row items-start gap-6 sm:items-center">
+                    <div className="relative w-full h-64 sm:w-40 sm:h-40 flex-shrink-0 mb-4 sm:mb-0">
                       <Image
-                        src={selectedJudge.image}
-                        alt={selectedJudge.name}
+                        src={selectedPerformer.image}
+                        alt={selectedPerformer.name}
                         layout="fill"
                         objectFit="cover"
+                        objectPosition="top center"
                         className="rounded-lg"
                       />
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-white">{selectedJudge.name}</h3>
-                      <p className="text-[#c3f6fe]">{selectedJudge.role}</p>
+                    <div className="flex-grow">
+                      <h3 className="text-2xl font-bold text-white">{selectedPerformer.name}</h3>
+                      <p className="text-[#c3f6fe]">{selectedPerformer.role}</p>
+                      {selectedPerformer.country && (
+                        <p className="text-[#c3f6fe] mt-1">{selectedPerformer.country}</p>
+                      )}
                     </div>
                   </div>
                   <div className="mt-6 space-y-4 text-white/80">
-                    {selectedJudge.longDescription?.split('\n\n').map((paragraph, index) => (
+                    {selectedPerformer.longDescription?.split('\n\n').map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}
                   </div>
-                  {selectedJudge.affiliations && (
+                  {selectedPerformer.affiliations && (
                     <div className="mt-6">
                       <p className="text-[#c3f6fe] font-medium">Representing:</p>
-                      <div className="flex gap-2 mt-2">
-                        {selectedJudge.affiliations.map((affiliation) => (
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {selectedPerformer.affiliations.map((affiliation) => (
                           <span
                             key={affiliation}
-                            className="bg-white/10 px-3 py-1 rounded-full text-sm text-white"
+                            className="bg-white/10 px-3 py-1 rounded-full text-sm text-white mb-2"
                           >
                             {affiliation}
                           </span>
