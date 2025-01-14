@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  height: -webkit-fill-available;
   height: 100%;
 }
 
@@ -21,7 +22,9 @@ body {
     rgb(var(--background-end-rgb))
   );
   min-height: 100vh;
+  width: 100%;
   position: relative;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
@@ -34,10 +37,24 @@ body {
   isolation: isolate;
 }
 
-/* Fix for mobile viewport height issues */
+/* Replace the existing @supports rule with these mobile-specific fixes */
 @supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
   .min-h-screen {
     min-height: -webkit-fill-available;
+  }
+}
+
+/* Add these mobile-specific styles */
+@media (max-width: 768px) {
+  body {
+    min-height: 100vh;
+    /* Ensure content is visible on mobile */
+    background-attachment: scroll;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
