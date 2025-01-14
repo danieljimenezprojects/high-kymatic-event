@@ -8,6 +8,11 @@
   --background-end-rgb: 26, 26, 46;
 }
 
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -15,12 +20,7 @@ body {
     rgb(var(--background-start-rgb)),
     rgb(var(--background-end-rgb))
   );
-}
-
-html,
-body {
-  overflow-x: hidden;
-  width: 100%;
+  min-height: 100vh;
   position: relative;
   margin: 0;
   padding: 0;
@@ -28,5 +28,16 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+#__next {
+  isolation: isolate;
+}
+
+/* Fix for mobile viewport height issues */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
 }
 
