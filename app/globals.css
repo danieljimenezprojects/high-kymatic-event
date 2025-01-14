@@ -8,10 +8,6 @@
   --background-end-rgb: 26, 26, 46;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -19,27 +15,18 @@ body {
     rgb(var(--background-start-rgb)),
     rgb(var(--background-end-rgb))
   );
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
-/* Prevent layout shift */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
 * {
   box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Improve performance */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
 }
 

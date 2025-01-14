@@ -54,8 +54,13 @@ export function Hero() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-[#050714]">
-      {/* Background Gradient */}
+    <section 
+      ref={sectionRef} 
+      className="relative min-h-screen overflow-hidden bg-[#050714]"
+      role="banner"
+      aria-label="Hero section"
+    >      
+    {/* Background Gradient */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-[#050714] via-[#1a1a2e] to-[#2a1a28]"
         style={{ opacity, scale }}
@@ -142,11 +147,12 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center min-h-screen text-center px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+      <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
           className="space-y-8"
+          style={{ willChange: 'transform' }}
         >
           {/* Main Title */}
           <motion.div
@@ -160,10 +166,10 @@ export function Hero() {
             className="space-y-4"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#c3f6fe] to-[#a3d8fe] leading-tight">
+              <span className="block text-[#c3f6fe] leading-tight opacity-100">
                 High Kymatic
               </span>
-              <span className="block text-white mt-2">
+              <span className="block text-white mt-2 opacity-100">
                 WAVING EVENT
               </span>
             </h1>
@@ -178,29 +184,31 @@ export function Hero() {
           </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="pt-8 pb-16 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4"
-          >
-            <Link href="#tickets">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="bg-[#471b1b] hover:bg-[#5a2424] text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-[0_0_30px_rgba(254,74,74,0.5)]"
+          {/* CTA Buttons */}
+          <div className="pt-8 pb-16 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <Link 
+              href="https://www.tickettailor.com/events/highkymatic/1493696" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Get your tickets (opens in new tab)"
+            >
+              <button 
+                className="bg-[#471b1b] hover:bg-[#5a2424] text-white px-8 py-3 rounded-full text-base font-medium transition-colors hover:shadow-lg"
               >
                 Get Your Tickets
-              </motion.button>
+              </button>
             </Link>
-            <Link href="#schedule">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="bg-[#c3f6fe] hover:bg-[#a3d8fe] text-[#23153c] px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-[0_0_30px_rgba(195,246,254,0.5)]"
+            <Link 
+              href="#schedule"
+              aria-label="View event schedule"
+            >
+              <button 
+                className="bg-[#c3f6fe] hover:bg-[#a3d8fe] text-[#23153c] px-8 py-3 rounded-full text-base font-medium transition-colors hover:shadow-lg"
               >
                 View Schedule
-              </motion.button>
+              </button>
             </Link>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
 

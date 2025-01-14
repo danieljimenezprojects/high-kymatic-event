@@ -14,11 +14,15 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    setIsLoaded(true)
+    // Defer non-critical initializations
+    const timer = requestIdleCallback(() => {
+      setIsLoaded(true)
+    })
+    return () => cancelIdleCallback(timer)
   }, [])
 
   if (!isLoaded) {
-    return null // or a loading spinner
+    return <div className="min-h-screen bg-[#050714]" /> // Minimal loading state
   }
 
   return (

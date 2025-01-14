@@ -135,7 +135,7 @@ export function LineUp() {
 
         <div className="space-y-24">
           <LineUpSection title="Our Judges" items={judges} />
-          <LineUpSection title="Hosts & DJs" items={performers} />
+          <LineUpSection title="Host & DJs" items={performers} />
         </div>
 
         <AnimatePresence>

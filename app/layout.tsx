@@ -5,6 +5,9 @@ import { Metadata } from 'next'
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+  adjustFontFallback: true
 })
 
 export const metadata: Metadata = {
@@ -53,7 +56,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`scroll-smooth ${inter.className}`}>
-      <body>{children}</body>
+      <head>
+        <link
+          rel="preload"
+          href="/_next/static/media/inter-latin.css"
+          as="style"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+      </head>
+      <body className="overflow-x-hidden">{children}</body>
     </html>
   )
 }
