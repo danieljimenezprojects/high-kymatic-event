@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import { Nav } from '@/components/nav'
 import { Hero } from '@/components/hero'
 import { About } from '@/components/about'
@@ -11,20 +8,6 @@ import { Contact } from '@/components/contact'
 import { Footer } from '@/components/footer'
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    // Defer non-critical initializations
-    const timer = requestIdleCallback(() => {
-      setIsLoaded(true)
-    })
-    return () => cancelIdleCallback(timer)
-  }, [])
-
-  if (!isLoaded) {
-    return <div className="min-h-screen bg-[#050714]" /> // Minimal loading state
-  }
-
   return (
     <>
       <Nav />
