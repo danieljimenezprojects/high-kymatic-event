@@ -99,6 +99,7 @@ export function Contact() {
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              title="Map Ubication of Thesalloniki - Greece"
             ></iframe>
           </motion.div>
         </div>

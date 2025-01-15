@@ -99,7 +99,7 @@ export function Schedule() {
               <button
                 key={day}
                 onClick={() => setActiveDay(day)}
-                className={`py-3 px-6 rounded-lg text-sm font-medium transition-all duration-300 ${
+                className={`py-3 px-6 rounded-lg text-lg font-medium transition-all duration-300 ${
                   activeDay === day
                     ? 'bg-[#fe4a4a] text-white'
                     : 'bg-white/5 text-white/70 hover:bg-white/10'

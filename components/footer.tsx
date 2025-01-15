@@ -54,6 +54,7 @@ export function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-white/60 hover:text-[#c3f6fe] transition-colors"
+                aria-label="High Kymatic instragram"
               >
                 <Instagram className="h-6 w-6" />
               </a>
