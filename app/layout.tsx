@@ -7,7 +7,8 @@ const inter = Inter({
   display: 'swap',
   preload: true,
   fallback: ['system-ui', 'arial'],
-  adjustFontFallback: true
+  adjustFontFallback: true,
+  variable: '--font-inter'
 })
 
 export const metadata: Metadata = {
@@ -57,11 +58,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${inter.className}`}>
       <head>
-        <link
-          rel="preload"
-          href="/_next/static/media/inter-latin.css"
-          as="style"
-        />
         {/* WhatsApp specific meta tags */}
         <meta property="og:image:secure_url" content="/opengraph.webp" />
         <meta property="og:image:width" content="1200" />
