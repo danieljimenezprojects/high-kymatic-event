@@ -53,6 +53,19 @@ export function Hero() {
     { size: 15, position: { x: '60%', y: '70%' }, delay: 2.5 },
   ]
 
+  const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    if (elem) {
+      const offsetTop = elem.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section 
       ref={sectionRef} 
@@ -200,6 +213,7 @@ export function Hero() {
             </Link>
             <Link 
               href="#schedule"
+              onClick={(e) => smoothScroll(e, '#schedule')}
               aria-label="View event schedule"
             >
               <button 
