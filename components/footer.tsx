@@ -11,6 +11,18 @@ export function Footer() {
     setCurrentYear(new Date().getFullYear())
   }, [])
 
+  const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    if (elem) {
+      const offsetTop = elem.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
   return (
     <footer className="bg-black border-t border-white/10">
       <div className="container mx-auto px-4 py-12">
@@ -25,17 +37,26 @@ export function Footer() {
             <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#about" className="text-white/60 hover:text-[#c3f6fe] transition-colors">
+                <Link 
+                  href="#about" 
+                  onClick={(e) => smoothScroll(e, '#about')}
+                  className="text-white/60 hover:text-[#c3f6fe] transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#lineup" className="text-white/60 hover:text-[#c3f6fe] transition-colors">
+                <Link 
+                  href="#lineup" 
+                  onClick={(e) => smoothScroll(e, '#lineup')}
+                  className="text-white/60 hover:text-[#c3f6fe] transition-colors">
                   Line Up
                 </Link>
               </li>
               <li>
-                <Link href="#schedule" className="text-white/60 hover:text-[#c3f6fe] transition-colors">
+                <Link 
+                  href="#schedule"
+                  onClick={(e) => smoothScroll(e, '#schedule')}
+                  className="text-white/60 hover:text-[#c3f6fe] transition-colors">
                   Schedule
                 </Link>
               </li>
