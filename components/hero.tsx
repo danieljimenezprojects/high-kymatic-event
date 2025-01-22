@@ -183,7 +183,7 @@ export function Hero() {
                 High Kymatic
               </span>
               <span className="block text-white mt-2 opacity-100">
-                WAVING EVENT
+                WAVING FESTIVAL
               </span>
             </h1>
             <div className="flex flex-col gap-4">
@@ -214,7 +214,7 @@ export function Hero() {
             <Link 
               href="#schedule"
               onClick={(e) => smoothScroll(e, '#schedule')}
-              aria-label="View event schedule"
+              aria-label="View festival schedule"
             >
               <button 
                 className="bg-[#c3f6fe] hover:bg-[#a3d8fe] text-[#23153c] px-8 py-3 rounded-full text-base font-medium transition-colors hover:shadow-lg"

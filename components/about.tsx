@@ -134,7 +134,7 @@ export function About() {
                 approach to the Waving style.
               </p>
               <p>
-                We organize events that serve as a platform for Waving enthusiasts to meet, express 
+                We organize festivals that serve as a platform for Waving enthusiasts to meet, express 
                 themselves, and learn from each other. Our goal is to contribute to the cultural 
                 development of our city and country through the Waving community.
               </p>
@@ -143,7 +143,7 @@ export function About() {
                 sharing our knowledge and providing a safe, inspiring environment for dancers to grow.
               </p>
               <p>
-                Through our events, we foster a multifaceted cultural dialogue, promoting not just 
+                Through our festivals, we foster a multifaceted cultural dialogue, promoting not just 
                 the Waving culture, but also enhancing the emotional and spiritual well-being of 
                 all participants.
               </p>

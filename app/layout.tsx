@@ -12,21 +12,21 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'High-kymatic Waving Event 2025',
+  title: 'High-kymatic Waving Festival 2025',
   description: 'Join us for an unforgettable waving dance experience in Greece. Featuring world-class performers, workshops, and competitions.',
   keywords: ['waving', 'dance', 'Greece', 'High-kymatic', 'performance'],
-  authors: [{ name: 'High-kymatic Event Team' }],
+  authors: [{ name: 'High-kymatic Festival Team' }],
   openGraph: {
-    title: 'High-kymatic Event 2025',
+    title: 'High-kymatic Festival 2025',
     description: 'Join us for an unforgettable waving dance experience in Greece. Featuring world-class performers, workshops, and competitions.',
     url: 'https://highkymatic.com',
-    siteName: 'High-kymatic Event',
+    siteName: 'High-kymatic Festival',
     images: [
       {
         url: '/opengraph.webp',
         width: 1200,
         height: 630,
-        alt: 'High-kymatic Event 2025',
+        alt: 'High-kymatic Festival 2025',
       },
     ],
     locale: 'en_US',
@@ -64,7 +64,7 @@ export default function RootLayout({
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/webp" />
         {/* Force WhatsApp to fetch new image version */}
-        <meta property="og:image:alt" content="High-kymatic Event 2025 Logo" />
+        <meta property="og:image:alt" content="High-kymatic Festival 2025 Logo" />
         <meta property="og:updated_time" content={new Date().toISOString()} />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
       </head>
