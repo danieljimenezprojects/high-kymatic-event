@@ -58,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${inter.className}`}>
       <head>
+        <meta name="google-site-verification" content="e6BpvEk7xm7hwAghfKU26JsID1qcEFdAd19iK33NyCY" />
         {/* WhatsApp specific meta tags */}
         <meta property="og:image:secure_url" content="/opengraph.webp" />
         <meta property="og:image:width" content="1200" />
