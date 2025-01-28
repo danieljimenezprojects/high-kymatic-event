@@ -12,7 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'High-kymatic Waving Festival 2025',
+  title: 'High kymatic Waving Festival 2025',
   description: 'Join us for an unforgettable waving dance experience in Greece. Featuring world-class performers, workshops, and competitions.',
   keywords: ['waving', 'dance', 'Greece', 'High-kymatic', 'performance'],
   authors: [{ name: 'High-kymatic Festival Team' }],
