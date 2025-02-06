@@ -47,8 +47,8 @@ export function Schedule() {
     day4: {
       date: "Sunday 25th of May",
       items: [
-        { time: "11:00-13:00", event: "Workshop", location: "Sofouli Theater", locationLink: "https://www.google.com/maps/place/Sofouli+Theater/@40.5887317,22.9454926,16z/data=!3m1!4b1!4m6!3m5!1s0x14a83ed10293dcf1:0xe61a67c0f7facf19!8m2!3d40.5887317!4d22.9454926!16s%2Fg%2F11b69cgprw?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D" },
-        { time: "13:15-15:15", event: "Workshop", location: "Sofouli Theater", locationLink: "https://www.google.com/maps/place/Sofouli+Theater/@40.5887317,22.9454926,16z/data=!3m1!4b1!4m6!3m5!1s0x14a83ed10293dcf1:0xe61a67c0f7facf19!8m2!3d40.5887317!4d22.9454926!16s%2Fg%2F11b69cgprw?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D" },
+        { time: "11:00-13:00", event: "Workshop", location: "All Star Dance City", locationLink: "https://maps.app.goo.gl/1wrTjqaP2RALX5QK9?g_st=com.google.maps.preview.copy" },
+        { time: "13:15-15:15", event: "Workshop", location: "All Star Dance City", locationLink: "https://maps.app.goo.gl/1wrTjqaP2RALX5QK9?g_st=com.google.maps.preview.copy" },
         { time: "17:30-21:30", event: "Theater Performances + Exhibition Exchange",location: "Sofouli Theater", locationLink: "https://www.google.com/maps/place/Sofouli+Theater/@40.5887317,22.9454926,16z/data=!3m1!4b1!4m6!3m5!1s0x14a83ed10293dcf1:0xe61a67c0f7facf19!8m2!3d40.5887317!4d22.9454926!16s%2Fg%2F11b69cgprw?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D" }
       ]
     }
