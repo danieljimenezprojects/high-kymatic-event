@@ -8,6 +8,7 @@ type ScheduleItem = {
   time: string;
   event: string;
   location?: string;
+  locationLink?: string;
 }
 
 type ScheduleData = {
@@ -30,9 +31,9 @@ export function Schedule() {
     day2: {
       date: "Friday 23rd of May",
       items: [
-        { time: "11:00-13:00", event: "Workshop", location: "TBA" },
-        { time: "13:15-15:15", event: "Workshop", location: "TBA" },
-        { time: "17:00-21:00", event: "Battle" },
+        { time: "11:00-13:00", event: "Workshop", location: "All Star Dance City", locationLink: "https://maps.app.goo.gl/1wrTjqaP2RALX5QK9?g_st=com.google.maps.preview.copy" },
+        { time: "13:15-15:15", event: "Workshop", location: "All Star Dance City", locationLink: "https://maps.app.goo.gl/1wrTjqaP2RALX5QK9?g_st=com.google.maps.preview.copy"  },
+        { time: "17:00-21:00", event: "Battle", location: "All Star Dance City", locationLink: "https://maps.app.goo.gl/1wrTjqaP2RALX5QK9?g_st=com.google.maps.preview.copy"  },
         { time: "", event: "1vs1 Beginner Waving Category" },
         { time: "", event: "1vs1 Storytelling Category" }
       ]
@@ -40,15 +41,15 @@ export function Schedule() {
     day3: {
       date: "Saturday 24th of May",
       items: [
-        { time: "14:00-19:00", event: "Main Event - Waving Game" }
+        { time: "14:00-19:00", event: "Main Event - Waving Game", location: "WE", locationLink: "https://www.google.com/maps/place/WE/@40.6258592,22.9581152,16z/data=!3m1!4b1!4m6!3m5!1s0x14a838fc149c9f29:0x2b462f2c3d04a985!8m2!3d40.6258592!4d22.9581152!16s%2Fg%2F11cn94g8zd?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D" }
       ]
     },
     day4: {
       date: "Sunday 25th of May",
       items: [
-        { time: "11:00-13:00", event: "Workshop", location: "TBA" },
-        { time: "13:15-15:15", event: "Workshop", location: "TBA" },
-        { time: "17:30-21:30", event: "Theater Performances + Exhibition Exchange" }
+        { time: "11:00-13:00", event: "Workshop", location: "Sofouli Theater", locationLink: "https://www.google.com/maps/place/Sofouli+Theater/@40.5887317,22.9454926,16z/data=!3m1!4b1!4m6!3m5!1s0x14a83ed10293dcf1:0xe61a67c0f7facf19!8m2!3d40.5887317!4d22.9454926!16s%2Fg%2F11b69cgprw?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D" },
+        { time: "13:15-15:15", event: "Workshop", location: "Sofouli Theater", locationLink: "https://www.google.com/maps/place/Sofouli+Theater/@40.5887317,22.9454926,16z/data=!3m1!4b1!4m6!3m5!1s0x14a83ed10293dcf1:0xe61a67c0f7facf19!8m2!3d40.5887317!4d22.9454926!16s%2Fg%2F11b69cgprw?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D" },
+        { time: "17:30-21:30", event: "Theater Performances + Exhibition Exchange",location: "Sofouli Theater", locationLink: "https://www.google.com/maps/place/Sofouli+Theater/@40.5887317,22.9454926,16z/data=!3m1!4b1!4m6!3m5!1s0x14a83ed10293dcf1:0xe61a67c0f7facf19!8m2!3d40.5887317!4d22.9454926!16s%2Fg%2F11b69cgprw?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D" }
       ]
     }
   }
@@ -67,11 +68,13 @@ export function Schedule() {
         </div>
         <div className="flex-1">
           <h3 className="text-white font-medium">{item.event}</h3>
-          {item.time && <p className="text-[#c3f6fe] text-sm">{item.time}</p>}
-          {item.location && (
-            <p className="text-[#c3f6fe] text-sm flex items-center mt-1">
-              <MapPin className="h-4 w-4 mr-1" />
-              {item.location}
+          {item?.time && <p className="text-[#c3f6fe] text-sm">{item.time}</p>}
+          {item?.location && item?.locationLink && (
+            <p className={`text-[#c3f6fe] text-sm flex items-center mt-1 underline hover:text-[#fe4a4a]`}>
+              <a href={item?.locationLink} target="_blank" rel="noopener noreferrer">
+                <MapPin className="h-4 w-4 mr-1 inline-block align-middle" />
+                {item?.location}
+              </a>
             </p>
           )}
         </div>
