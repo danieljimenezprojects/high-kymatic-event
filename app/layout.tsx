@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -12,7 +12,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'High kymatic Waving Festival 2025',
+  title: {
+    default: 'High-kymatic Waving Festival 2025',
+    template: '%s | High-kymatic Festival'
+  },
   description: 'Join us for an unforgettable waving dance experience in Greece. Featuring world-class performers, workshops, and competitions.',
   keywords: ['waving', 'dance', 'Greece', 'High-kymatic', 'performance'],
   authors: [{ name: 'High-kymatic Festival Team' }],
@@ -32,22 +35,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+  robots: 'index, follow',
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: [{ url: '/favicon.ico' }],
+    apple: [{ url: '/apple-touch-icon.png' }],
   },
+  verification: {
+    google: 'e6BpvEk7xm7hwAghfKU26JsID1qcEFdAd19iK33NyCY'
+  }
 }
 
 export default function RootLayout({
@@ -57,12 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`scroll-smooth ${inter.className}`}>
-      <head>
-        <meta name="google-site-verification" content="e6BpvEk7xm7hwAghfKU26JsID1qcEFdAd19iK33NyCY" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
-      </head>
       <body className="overflow-x-hidden">{children}</body>
     </html>
   )
 }
-
