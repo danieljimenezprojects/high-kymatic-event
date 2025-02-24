@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'High-kymatic Festival',
     images: [
       {
-        url: '/opengraph.webp',
+        url: 'https://www.highkymatic.com/opengraph.webp',
         width: 1200,
         height: 630,
         alt: 'High-kymatic Festival 2025',
