@@ -59,14 +59,6 @@ export default function RootLayout({
     <html lang="en" className={`scroll-smooth ${inter.className}`}>
       <head>
         <meta name="google-site-verification" content="e6BpvEk7xm7hwAghfKU26JsID1qcEFdAd19iK33NyCY" />
-        {/* WhatsApp specific meta tags */}
-        <meta property="og:image:secure_url" content="/opengraph.webp" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/webp" />
-        {/* Force WhatsApp to fetch new image version */}
-        <meta property="og:image:alt" content="High-kymatic Festival 2025 Logo" />
-        <meta property="og:updated_time" content={new Date().toISOString()} />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
       </head>
       <body className="overflow-x-hidden">{children}</body>
