@@ -33,7 +33,7 @@ export function Schedule() {
       items: [
         { time: "11:00-13:00", event: "Workshop", location: "All Star Dance City", locationLink: "https://maps.app.goo.gl/1wrTjqaP2RALX5QK9?g_st=com.google.maps.preview.copy" },
         { time: "13:15-15:15", event: "Workshop", location: "All Star Dance City", locationLink: "https://maps.app.goo.gl/1wrTjqaP2RALX5QK9?g_st=com.google.maps.preview.copy"  },
-        { time: "17:00-21:00", event: "Battle", location: "All Star Dance City", locationLink: "https://maps.app.goo.gl/1wrTjqaP2RALX5QK9?g_st=com.google.maps.preview.copy"  },
+        { time: "17:00-21:00", event: "Battle", location: "Seagull Space", locationLink: "https://maps.app.goo.gl/TTPiXWg5hJphuxB4A"  },
         { time: "", event: "1vs1 Beginner Waving Category" },
         { time: "", event: "1vs1 Storytelling Category" }
       ]
