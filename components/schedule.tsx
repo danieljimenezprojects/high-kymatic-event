@@ -91,7 +91,7 @@ export function Schedule() {
 						'https://maps.app.goo.gl/1wrTjqaP2RALX5QK9?g_st=com.google.maps.preview.copy',
 				},
 				{
-					time: '17:30-21:30',
+					time: '18:00-21:30',
 					event: 'Theater Performances + Exhibition Exchange',
 					location: 'Sofouli Theater',
 					locationLink:
